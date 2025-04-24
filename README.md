@@ -5,7 +5,7 @@ This script returns the names and physical file paths of all database files on t
 
 ---
 
-### 🔧 Query:
+### Query:
 ```sql
 SELECT 
     name, 
@@ -23,3 +23,9 @@ FROM sys.master_files;
 - Validate consistency in storage paths (e.g., standard folder structure)
 
 
+SELECT 
+    DB_NAME(database_id) AS DatabaseName,
+    name AS LogicalName,
+    type_desc AS FileType,
+    physical_name AS FilePath
+FROM sys.master_files;
